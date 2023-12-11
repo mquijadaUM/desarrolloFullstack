@@ -1,15 +1,16 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "./entity/User"
-import { Photo } from "./entity/Photo"
-import { PhotoMetadata } from "./entity/PhotoMetadata"
+
+import { ReunionModel } from "./entity/Reunion";
+import { TurnoModel } from "./entity/Turno";
+import { ReservaModel } from "./entity/Reserva";
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "database.sqlite",
     synchronize: true,
     logging: false,
-    entities: [User, Photo, PhotoMetadata],
+    entities: [ReunionModel, TurnoModel, ReservaModel],
     migrations: [],
     subscribers: [],
 })
